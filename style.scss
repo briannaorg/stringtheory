@@ -1,0 +1,256 @@
+/*  
+Theme Name: String Theory Template
+Theme URI: http://technosiren.com/stringtheory/
+Description: The base theme used by Utopian.net and TechnoSiren developers since 2008.
+Version: 2.1
+Author: TechnoSiren
+Author URI: http://technosiren.com
+*/
+
+@import "css/mixins.scss";
+
+$font-header: Josefin Sans, Helvetica, sans-serif;
+$font-body: Merriweather, Garamond, serif;
+$link-color: #c45a20;
+$secondary-color: #6371a3;
+
+html {
+    min-height: 100%;
+}
+        
+body {
+	font-family: $font-body;
+	@include font-size(13);
+}
+
+h1, h2, h3 {
+	font-family: $font-header;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $secondary-color;
+}
+
+.page-wrap {
+
+}
+
+header {
+	width: 100%;
+	@include breakpoint(large) { min-height: 600px; }
+  	@include breakpoint(medium) { min-height: 400px; }
+  	@include breakpoint(small) { min-height: 140px; }
+	text-align: center;
+	padding: 50px 0px;
+}
+
+header img {
+	max-width: 100%;
+	max-height: 100%;
+}
+header h1 {
+
+}
+
+menu {
+
+}
+
+menu ul li{
+	display: inline-block;
+	font-size: 80%;
+}
+
+#blog-content {
+
+}
+
+#page-content {
+
+}
+
+article {
+
+}
+
+section {
+
+}
+
+
+/* The splash template is always single column, with no frame. Intended for use with a central image. */
+
+#splash-content { 
+	width:960px; 
+	margin:auto;  
+}
+
+#footer {  
+	height:30px; 
+	width:960px; 
+	margin:auto; 
+	padding:8px 0px; 
+	text-align:right; 
+	font-size:80%;  
+}
+
+.push {  
+	height:60px;  
+}
+
+
+/* Comments styles */
+ul.meta li { 
+	list-style:none; 
+	margin:0px 0px 0px -20px; 
+	font-size:90%; 
+}
+
+div#respond{  
+	text-align:left; 
+	margin:0px 0px 0px -150px;  
+}
+
+form#commentform {  
+	margin:0px 0px 0px 140px;  
+}
+	form#commentform fieldset {  
+	border-radius:16px; 
+	-moz-border-radius:16px; 
+	-webkit-border-radius:16px;  
+}
+			
+textarea#comment {  
+	max-width:470px;  
+}
+
+div.reply {  
+	margin:0px 0px 0px 10px; 
+}
+	
+img.avatar {  
+	float:left; 
+	margin:0px 6px 0px 0px  
+}
+
+.commentmetadata {  
+	font-size:80%;  
+}
+
+.even {  
+	background-color:#eee; 
+	padding:4px;  
+}
+
+/* eshop panel listings */
+
+ul.eshoppanels {  
+	list-style:none; 
+	margin:0; 
+	padding:0;  
+}
+ul.eshoppanels li {  
+	width:205px; 
+	list-style:none; 
+	float:left; 
+	margin:5px; 
+	padding:6px;  
+}
+
+#content ul.eshoppanels li a { 
+	text-decoration:none; 
+	display:block; 
+	padding:0 4px;  
+}
+#content ul.eshoppanels li a img {  
+	float:none; 
+	margin:0;  
+}
+
+.creditline {  
+	display:none;  
+}
+
+/* default gallery styles */
+
+.gallery {  
+	margin: auto;  
+}
+
+.gallery-item {  
+	width:33%; 
+	margin:10px 0px 0px; 
+	text-align:center; 
+	float:left;  
+}
+
+.gallery img {  
+	border:0px !important;  
+}
+
+.gallery-caption {  
+	margin:0;  
+}
+
+span.caps {  
+	font-size:0.9em; 
+	letter-spacing:0.07em;  
+}
+
+p img {  
+	padding:0; 
+}
+
+.aligncenter, div.aligncenter, img.centered {  
+	display:block; 
+	margin:0px auto;  
+}
+
+img.alignleft {  
+	padding:4px; 
+	margin:0px 7px 2px 0px;  
+	display:inline;  
+}
+
+img.alignright {  
+	padding:4px; 
+	margin:0px 0px 2px 7px; 
+	display:inline;  
+}
+			
+span.caps {  
+	cursor:help;  
+}
+			
+.navigation {  	
+	display:block; 
+	text-align:center; 
+	margin-top:10px; 
+	margin-bottom:60px;  
+}
+
+.wp-caption { 
+	border:1px solid #ddd; 
+	text-align:center; 
+	background-color:#eee; 
+	padding:4px 0px 0px; 
+	margin: 10px;  
+}
+
+.wp-caption img {  
+	margin: 0; 
+	padding: 0; 
+	border: 0 none;  
+}
+
+.wp-caption p.wp-caption-text {  
+	font-size:11px; 
+	line-height:17px; 
+	padding:0px 4px 5px; 
+	margin: 0;  
+}
