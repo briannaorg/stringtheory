@@ -12,7 +12,6 @@ query_posts($query_string.'&showposts=10');
 					<section class="entry">
 						<abbr class="published posted_date" title="<?php the_time('Y-m-d\TH:i:sP') ?>"> <?php echo get_the_time(get_option('date_format'))  /* Use get_the_time() to avoid the_date() output bug in this context. */ ?></abbr><br />
 						<?php the_excerpt(); ?> 
-						<a href="<?php the_permalink(); ?>" rel="bookmark" title="Link to <?php the_title(); ?>">Read more >></a>
 						<br /><br />
 					</section>
 				</article>

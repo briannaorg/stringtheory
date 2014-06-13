@@ -15,7 +15,6 @@
 				<div class="archpost">
 					<span class="emph"><?php the_date(); ?></span><br />
 					<?php the_excerpt(); ?> 
-					<a href="<?php the_permalink() ?>" rel="bookmark" title="Link to <?php the_title(); ?>">Read more >></a>
 					<br /><br />
 				</div>
 					<?php endwhile; ?>
