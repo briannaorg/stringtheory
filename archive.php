@@ -1,8 +1,5 @@
 <?php get_header(); ?>
-			<div id="sidebarone" class="alignleft">
-				<?php get_sidebar(); ?>
-			</div>
-			<div id="mainbody" class="alignleft">
+			<main id="page-content" class="archive">
 			 <?php 
 				query_posts($query_string.'&showposts=20');?>
 				<?php if (have_posts()) :
@@ -20,17 +17,13 @@
 					<?php endwhile; ?>
 				<?php  } elseif (function_exists('clean_archives_reloaded')) { clean_archives_reloaded(); } ?>		<br /><br />
 		      <?php else : ?>
-				<span class="title"><b>Not Found</b></span>	
+			    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+			      <h2> 
+			        <?php _e('Not Found'); ?> 
+			      </h2> 
+			    </article
 			    <?php endif; ?> 
-			</div>	
-			<div id="sidebartwo" class="alignleft">
-			<ul>
-				<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar Right') ) : else : ?>
-			
-				<?php endif; /* END FOR WIDGETS CALL */ ?>
-			</ul>			
-			</div>
-		</div>						
-		<div id="footer" class="spacer"><?php get_footer(); ?> </div>	
-	</body>
-</html>
+			</main>	
+			<?php get_sidebar(); ?>
+<?php get_footer(); ?>
+		
