@@ -23,7 +23,7 @@
 			    <?php else : ?> 
 			    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 			      <h2> 
-			        <?php _e('Not Found'); ?> 
+			        <?php _e( 'Not Found', 'stringtheory' ); ?>  
 			      </h2> 
 			    </article> 
 			  <?php endif; ?> 
