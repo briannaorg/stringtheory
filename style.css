@@ -2,9 +2,19 @@
 Theme Name: String Theory Template
 Theme URI: http://technosiren.com/stringtheory/
 Description: The base theme used by Utopian.net and TechnoSiren developers since 2008.
-Version: 2.1
+Version: 2.2
 Author: TechnoSiren
 Author URI: http://technosiren.com
+
+Text Domain: stringtheory
+Domain Path: /languages/
+Tags: black, blue, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+String Theory WordPress Theme, Copyright 2014 Brianna Privett
+String Theory is distributed under the terms of the GNU GPL
 */
 /* Meyer Reset, minus several elements that I prefer not be reset
    ========================================================================== */
@@ -247,16 +257,12 @@ menu ul li {
   width: 960px;
   margin: auto; }
 
-#footer {
-  height: 30px;
-  width: 960px;
-  margin: auto;
-  padding: 8px 0px;
-  text-align: right;
-  font-size: 80%; }
+.sticky {
+  font-size: 110%; }
 
-.push {
-  height: 60px; }
+.bypostauthor {
+  font-size: 90%;
+  font-weight: bold; }
 
 /* Comments styles */
 ul.meta li {

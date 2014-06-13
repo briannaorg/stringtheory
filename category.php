@@ -21,8 +21,8 @@ query_posts($query_string.'&showposts=10');
 						<div class="next"><?php previous_posts_link('More Category Listings &raquo;') ?></div>
 					</nav>			
 				<?php else : ?>
-					<h2 class="pagetitle"><?php _e('The Category Does Not Exist'); ?></h2>
-					<p><?php _e("Sorry, but the category you're looking for doesn't exist. Please try selecting a category from the menu."); ?></p>
+					<h2 class="pagetitle"><?php _e('The Category Does Not Exist', 'stringtheory'); ?></h2>
+					<p><?php _e("Sorry, but the category you're looking for doesn't exist. Please try selecting a category from the menu.", "stringtheory"); ?></p>
 			 <?php endif; ?>		
 			</main>
 			<?php get_sidebar(); ?>

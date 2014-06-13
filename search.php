@@ -11,7 +11,7 @@
 			        <?php the_content(); ?> 
 			      </section> 
 			    </article> 
-			    	<?php include(TEMPLATEPATH . '/hentrymeta.php'); ?>
+			    	<?php get_template_part('content','meta'); ?>
 			    <?php endwhile; ?> 
 			    <nav class="navigation"> 
 			      <?php posts_nav_link(); ?> 

@@ -91,7 +91,7 @@ function filter_wp_title( $title ) {
 
 	$filtered_title = $title . get_bloginfo( 'name' );
 	$filtered_title .= ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) ? ' | ' . $site_description: '';
-	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) ) : '';
+	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s', 'stringtheory' ), max( $paged, $page ) ) : '';
 
 	return $filtered_title;
 }
