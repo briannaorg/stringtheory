@@ -18,11 +18,7 @@ String Theory is distributed under the terms of the GNU GPL
 */
 
 @import "css/mixins.scss";
-
-$font-header: Josefin Sans, Helvetica, sans-serif;
-$font-body: Merriweather, Garamond, serif;
-$link-color: #c45a20;
-$secondary-color: #6371a3;
+@import "css/font-color.scss";
 
 html {
     min-height: 100%;

@@ -1,0 +1,10 @@
+/* Font Size
+  ========================================================================== */
+body#tinymce.wp-editor {
+  font-family: Merriweather, Garamond, serif;
+  font-size: 13px;
+  font-size: 1.625rem; }
+
+body#tinymce.wp-editor a {
+  color: #c45a20;
+  text-decoration: none; }

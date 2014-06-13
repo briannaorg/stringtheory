@@ -1,0 +1,12 @@
+@import "font-color.scss";
+
+
+body#tinymce.wp-editor { 
+	font-family: $font-body;
+	@include font-size(13);
+}
+
+body#tinymce.wp-editor a {
+	color: $link-color;
+	text-decoration: none;
+}

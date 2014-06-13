@@ -1,0 +1,12 @@
+/* Font Size
+  ========================================================================== */
+
+@mixin font-size($sizeValue: 12 ){
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.125 * $sizeValue) + rem;
+}
+
+$font-header: Josefin Sans, Helvetica, sans-serif;
+$font-body: Merriweather, Garamond, serif;
+$link-color: #c45a20;
+$secondary-color: #6371a3;

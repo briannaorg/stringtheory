@@ -224,6 +224,11 @@ function string_theory_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'string_theory_scripts' );
 
+function string_theory_add_editor_styles() {
+    add_editor_style( '/css/editor-style.css' );
+}
+add_action( 'init', 'string_theory_add_editor_styles' );
+
 /* Handy is_child function for submenus and page parents in eShop */
 function is_child($parent) {
 		global $wp_query;

@@ -199,6 +199,8 @@ input::-webkit-input-placeholder {
 input:-ms-input-placeholder {
   color: #fa4a4a; }
 
+/* Font Size
+  ========================================================================== */
 html {
   min-height: 100%; }
 
