@@ -6,7 +6,7 @@ Version: 2.1
 Author: TechnoSiren
 Author URI: http://technosiren.com
 */
-/* Meyer Reset, minus block-quotes
+/* Meyer Reset, minus several elements that I prefer not be reset
    ========================================================================== */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -31,19 +31,15 @@ table {
 
 /* Responsive Breakpoints
    ========================================================================== */
-/* Usage */
-.page-wrap {
-  width: 75%; }
-  @media (min-width: 64.375em) {
-    .page-wrap {
-      width: 60%; } }
-  @media (min-width: 50em) {
-    .page-wrap {
-      width: 80%; } }
-  @media (min-width: 37.5em) {
-    .page-wrap {
-      width: 95%; } }
+/* Usage 
 
+.page-wrap {
+  width: 100%;
+  @include breakpoint(large) { width: 60%; }
+  @include breakpoint(medium) { width: 80%; }
+  @include breakpoint(small) { width: 95%; }
+}
+*/
 /* Retina images
    ========================================================================== */
 /* Usage */
@@ -211,17 +207,30 @@ a {
 a:hover {
   color: #6371a3; }
 
+.page-wrap {
+  width: 100%;
+  margin: auto; }
+  @media (min-width: 50em) {
+    .page-wrap {
+      width: 60%; } }
+  @media (min-width: 25em) {
+    .page-wrap {
+      width: 80%; } }
+  @media (max-width: 25em) {
+    .page-wrap {
+      width: 95%; } }
+
 header {
   width: 100%;
   text-align: center;
   padding: 50px 0px; }
-  @media (min-width: 64.375em) {
-    header {
-      min-height: 600px; } }
   @media (min-width: 50em) {
     header {
+      min-height: 600px; } }
+  @media (min-width: 25em) {
+    header {
       min-height: 400px; } }
-  @media (min-width: 37.5em) {
+  @media (max-width: 25em) {
     header {
       min-height: 140px; } }
 

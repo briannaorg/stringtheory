@@ -1,6 +1,6 @@
 // Mixins and examples
 
-/* Meyer Reset, minus block-quotes
+/* Meyer Reset, minus several elements that I prefer not be reset
    ========================================================================== */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -34,25 +34,25 @@ table {
    ========================================================================== */
 @mixin breakpoint($point) {
   @if $point == large {
-    @media (min-width: 64.375em) { @content; }
-  }
-  @else if $point == medium {
     @media (min-width: 50em) { @content; }
   }
+  @else if $point == medium {
+    @media (min-width: 25em) { @content; }
+  }
   @else if $point == small {
-    @media (min-width: 37.5em)  { @content; }
+    @media (max-width: 25em)  { @content; }
   }
 }
 
-/* Usage */
+/* Usage 
 
 .page-wrap {
-  width: 75%;
+  width: 100%;
   @include breakpoint(large) { width: 60%; }
   @include breakpoint(medium) { width: 80%; }
   @include breakpoint(small) { width: 95%; }
 }
-
+*/
 /* Retina images
    ========================================================================== */
 

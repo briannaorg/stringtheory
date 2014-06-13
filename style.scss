@@ -37,7 +37,11 @@ a:hover {
 }
 
 .page-wrap {
-
+  width: 100%;
+  @include breakpoint(large) { width: 60%; }
+  @include breakpoint(medium) { width: 80%; }
+  @include breakpoint(small) { width: 95%; }
+  margin: auto;
 }
 
 header {
