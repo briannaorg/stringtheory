@@ -20,7 +20,7 @@
 			        <?php the_content(); ?> 
 			        <?php wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?>
 			      </section> 
-			      <section>
+			      <section class="meta-nav">
 			     	<?php include(TEMPLATEPATH . '/hentrymeta.php'); ?>
 			      </section>
 			    </article> 
