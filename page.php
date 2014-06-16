@@ -16,8 +16,12 @@
 			    <nav class="navigation"> 
 			      <?php posts_nav_link(); ?> 
 			    </nav> 
-			    
+				
+				<?php if (!is_page('archive')) { ?>
+
 			    <?php comments_template(); ?>
+
+				<? } ?>			    
 			    
 			    <?php else : ?> 
 			    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
