@@ -8,3 +8,5 @@
 					<li><a href="<?php comments_link(); ?>-heading"><?php comments_number('0 Comments', '1 Comment', '% Comments'); ?></a> - <?php post_comments_feed_link(__('Feed', 'stringth')); ?></li>
 				</ul>
 <!-- <?php trackback_rdf(); ?> -->
+
+				<?php comments_template(); ?>
