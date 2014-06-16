@@ -12,6 +12,9 @@
 			    <nav class="navigation"> 
 			      <?php posts_nav_link(); ?> 
 			    </nav> 
+			    
+			    <?php comments_template(); ?>
+			    
 			    <?php else : ?> 
 			    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 			      <h2> 

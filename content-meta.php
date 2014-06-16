@@ -9,4 +9,3 @@
 				</ul>
 <!-- <?php trackback_rdf(); ?> -->
 
-				<?php comments_template(); ?>
