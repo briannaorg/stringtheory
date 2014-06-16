@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 			<main id="page-content" class="archive">
-			 <?php 
+ 
 				<?php if ( have_posts() ) : ?>
 
 				<?php if ( is_author() ) echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
@@ -37,13 +37,14 @@
 
 					endwhile;
 
-					} elseif (function_exists('clean_archives_reloaded')) { clean_archives_reloaded(); } 
+					
 		      		
 		      		else : 
 
 					get_template_part( 'content', 'none' );
 					
 				endif;
+				?>
 			</main>	
 			<?php get_sidebar(); ?>
 <?php get_footer(); ?>
