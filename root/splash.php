@@ -16,7 +16,7 @@ Template Name: splash
 			    <?php else : ?> 
 			    <article class="post" id="post-<?php the_ID(); ?>"> 
 			      <h2> 
-			        <?php _e( 'Not Found', 'stringtheory' ); ?>  
+			        <?php _e( 'Not Found', '{%= prefix %}' ); ?>  
 			      </h2> 
 			    </article> 
 			    <?php endif; ?> 

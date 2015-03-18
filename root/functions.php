@@ -11,8 +11,8 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 800;
 }
  
-if ( ! function_exists( 'string_theory_setup' ) ) : 
-function string_theory_setup() { 
+if ( ! function_exists( '{%= prefix %}_setup' ) ) : 
+function {%= prefix %}_setup() { 
 /*
  * Gettext i18n.
  * load_theme_textdomain( $domain, $path )
@@ -21,7 +21,7 @@ function string_theory_setup() {
 $dir = basename(dirname(__FILE__));
 
 /* Internationalization */
-	load_theme_textdomain('stringtheory', 'wp-content/themes/' . $dir . '/languages');
+	load_theme_textdomain('{%= prefix %}', 'wp-content/themes/' . $dir . '/languages');
 	
 
 /* RSS and ATOM Feeds */
@@ -55,14 +55,15 @@ $dir = basename(dirname(__FILE__));
 		'search-form',
 		'comment-form',
 		'gallery',
+		'widgets',
 	) );
 
 }
-endif; // string_theory_setup
-add_action( 'after_setup_theme', 'string_theory_setup' );
+endif; // {%= prefix %}_setup
+add_action( 'after_setup_theme', '{%= prefix %}_setup' );
 
 
-function stringtheory_styles() {
+function {%= prefix %}_styles() {
 	?>
 <style>
 header { 
@@ -76,7 +77,7 @@ header {
 </style>
 	<?php
 }
-add_action( 'wp_head', 'stringtheory_styles' );
+add_action( 'wp_head', '{%= prefix %}_styles' );
 
 /* Filter wp_title() to give each page a unique title */
 
@@ -91,7 +92,7 @@ function filter_wp_title( $title ) {
 
 	$filtered_title = $title . get_bloginfo( 'name' );
 	$filtered_title .= ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) ? ' | ' . $site_description: '';
-	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s', 'stringtheory' ), max( $paged, $page ) ) : '';
+	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s', '{%= prefix %}' ), max( $paged, $page ) ) : '';
 
 	return $filtered_title;
 }
@@ -126,7 +127,7 @@ $size
 */
 
 // If user refuses to set Featured Images, get the first image attached to the current post
-function st_get_post_image($size = 'thumbnail') {
+function {%= prefix %}_get_post_image($size = 'thumbnail') {
 	global $post;
 
 	$photos = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
@@ -140,7 +141,7 @@ function st_get_post_image($size = 'thumbnail') {
 }
 
 /* Menus */
-function register_st_menus() {
+function register_{%= prefix %}_menus() {
 
 	if ( function_exists( 'register_nav_menus' ) ) {
 		register_nav_menus(
@@ -152,59 +153,59 @@ function register_st_menus() {
 	}
 }
 
-	add_action( 'init', 'register_st_menus' );
+	add_action( 'init', 'register_{%= prefix %}_menus' );
 	
 /* Register Sidebars and Widgets */
-function string_theory_sidebar_init() {
+function {%= prefix %}_sidebar_init() {
 
 	register_sidebar( array(
-		'name'          => __( 'Top Sidebar', 'stringtheory' ),
+		'name'          => __( 'Top Sidebar', '{%= prefix %}' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Horizontal sidebar that appears on the top.', 'stringtheory' ),
+		'description'   => __( 'Horizontal sidebar that appears on the top.', '{%= prefix %}' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Right Sidebar', 'stringtheory' ),
+		'name'          => __( 'Right Sidebar', '{%= prefix %}' ),
 		'id'            => 'sidebar-2',
-		'description'   => __( 'Column sidebar that appears on the right.', 'stringtheory' ),
+		'description'   => __( 'Column sidebar that appears on the right.', '{%= prefix %}' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'stringtheory' ),
+		'name'          => __( 'Footer Widget Area', '{%= prefix %}' ),
 		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears in the footer section of the site.', 'stringtheory' ),
+		'description'   => __( 'Appears in the footer section of the site.', '{%= prefix %}' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'string_theory_sidebar_init' );
+add_action( 'widgets_init', '{%= prefix %}_sidebar_init' );
 	
 /* Register Google fonts */
 
-function string_theory_font_url() {
+function {%= prefix %}_font_url() {
 	$font_url = '';
 	/*
 	 * Translators: If there are characters in your language that are not supported
 	 * by these fonts, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Google Web font: on or off', 'stringtheory' ) ) {
-		$font_url = add_query_arg( 'family', urlencode( 'Josefin Sans|Merriweather' ), "//fonts.googleapis.com/css" );
+	if ( 'off' !== _x( 'on', 'Google Web font: on or off', '{%= prefix %}' ) ) {
+		$font_url = add_query_arg( 'family', urlencode( 'Josefin Sans|Merriweather' ), "//fonts.googleapis.com/" );
 	}
 
 	return $font_url;
 }
 	
-function string_theory_scripts() {
+function {%= prefix %}_scripts() {
 	// Add Amatic font, used in the main stylesheet.
-	wp_enqueue_style( 'string-theory-amatic', string_theory_font_url(), array(), null );
+	wp_enqueue_style( 'string-theory-amatic', {%= prefix %}_font_url(), array(), null );
 
 	// Add Font Awesome font, used in the main stylesheet.
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '3.2.1' );
@@ -220,14 +221,14 @@ function string_theory_scripts() {
 		wp_enqueue_script( 'jquery-masonry' );
 	}
 
-	wp_enqueue_script( 'string_theory-script', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '20140501', true );
+	wp_enqueue_script( '{%= prefix %}-script', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '20140501', true );
 }
-add_action( 'wp_enqueue_scripts', 'string_theory_scripts' );
+add_action( 'wp_enqueue_scripts', '{%= prefix %}_scripts' );
 
-function string_theory_add_editor_styles() {
+function {%= prefix %}_add_editor_styles() {
     add_editor_style( '/css/editor-style.css' );
 }
-add_action( 'init', 'string_theory_add_editor_styles' );
+add_action( 'init', '{%= prefix %}_add_editor_styles' );
 
 /* Handy is_child function for submenus and page parents in eShop */
 function is_child($parent) {

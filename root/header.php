@@ -17,13 +17,13 @@
 			</header>
 			<menu id="menu">
 				<?php
-				function st_wp_nav_menu_args( $args = '' )
+				function {%= prefix %}_wp_nav_menu_args( $args = '' )
 				{
 					$args['container'] = false;
 					return $args;
 				}
 				
-				add_filter( 'wp_nav_menu_args', 'st_wp_nav_menu_args' );
+				add_filter( 'wp_nav_menu_args', '{%= prefix %}_wp_nav_menu_args' );
 				?>
 
 				<?php wp_nav_menu( array('menu' => 'Top Menu')); ?>

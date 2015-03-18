@@ -18,7 +18,7 @@
 				<?php endwhile; else: ?>
  				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 			      <h2> 
-			        <?php _e( 'Not Found', 'stringtheory' ); ?> 
+			        <?php _e( 'Not Found', '{%= prefix %}' ); ?> 
 			      </h2> 
 			    </article> 
 			  <?php endif; ?> 

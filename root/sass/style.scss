@@ -1,24 +1,21 @@
 /*  
-Theme Name: String Theory Template
-Theme URI: http://technosiren.com/stringtheory/
-Description: The base theme used by Utopian.net and TechnoSiren developers since 2008.
-Version: 2.2
-Author: TechnoSiren
-Author URI: http://technosiren.com
-
-Text Domain: stringtheory
-Domain Path: /languages/
-Tags: black, blue, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
-
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
-String Theory WordPress Theme, Copyright 2014 Brianna Privett
-String Theory is distributed under the terms of the GNU GPL
+ * Theme Name:  {%= title %}
+ * Theme URI:   {%= homepage %}
+ * Description: {%= description %}
+ * Author:      {%= author_name %}
+ * Author URI:  {%= author_url %}
+ *
+ *Tags: black, blue, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, buddypress, custom-background, custom-colors,  custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+ * Text Domain: {%= language %}
+ * Domain Path: /languages/
+ *
+ * License:     GPLv2+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
 */
 
-@import "css/mixins.scss";
-@import "css/font-color.scss";
+@import "mixins.scss";
+@import "font-color.scss";
 
 html {
     min-height: 100%;
@@ -63,6 +60,7 @@ header img {
 	max-width: 100%;
 	max-height: 100%;
 }
+
 header h1 {
 
 }
@@ -181,6 +179,7 @@ ul.eshoppanels li {
 .creditline {  
 	display:none;  
 }
+
 
 /* default gallery styles */
 
