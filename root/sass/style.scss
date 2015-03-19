@@ -12,10 +12,9 @@
  * License:     GPLv2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
-*/
 
-@import "mixins.scss";
-@import "font-color.scss";
+@import "mixins";
+@import "font-color";
 
 html {
     min-height: 100%;

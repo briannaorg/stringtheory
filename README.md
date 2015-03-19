@@ -1,4 +1,4 @@
-## String Theory
+## {%= title %}
 =============
 
 A light, complete HTML responsive theme framework for WordPress.

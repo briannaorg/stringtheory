@@ -1,6 +1,6 @@
 <?php
-/* String Theory setup and base functions.
- * Updated for 2014 and beyond from the ever-evolving 2008 version by Utopian.net
+/* {%= title %} setup and base functions.
+ * Updated for 2015 and beyond from the ever-evolving 2008 version by Utopian.net
  *
  *
  *
