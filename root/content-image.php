@@ -28,16 +28,16 @@
 			</span>
 
 			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'stringtheory' ), __( '1 Comment', 'stringtheory' ), __( '% Comments', 'stringtheory' ) ); ?></span>
+			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '{%= prefix %}' ), __( '1 Comment', '{%= prefix %}' ), __( '% Comments', '{%= prefix %}' ) ); ?></span>
 			<?php endif; ?>
 
 		</div><!-- .entry-meta -->
 
 	<div class="entry-content">
 		<?php
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'stringtheory' ) );
+			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', '{%= prefix %}' ) );
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'stringtheory' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', '{%= prefix %}' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
