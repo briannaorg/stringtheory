@@ -5,32 +5,40 @@
  */
 
 ( function( $ ) {
-	// Site title and description.
+
+	// Update the site title in real time...
 	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
+		value.bind( function( newval ) {
+			$( '#site-title a' ).html( newval );
 		} );
 	} );
+	
+	//Update the site description in real time...
 	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
+		value.bind( function( newval ) {
+			$( '.site-description' ).html( newval );
 		} );
 	} );
-	// Header text color.
+
+	//Update site title color in real time...
 	wp.customize( 'header_textcolor', function( value ) {
-		value.bind( function( to ) {
-			if ( 'blank' === to ) {
-				$( '.site-title, .site-description' ).css( {
-					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute'
-				} );
-			} else {
-				$( '.site-title, .site-description' ).css( {
-					'clip': 'auto',
-					'color': to,
-					'position': 'relative'
-				} );
-			}
+		value.bind( function( newval ) {
+			$('#site-title a').css('color', newval );
 		} );
 	} );
+
+	//Update site background color...
+	wp.customize( 'background_color', function( value ) {
+		value.bind( function( newval ) {
+			$('body').css('background-color', newval );
+		} );
+	} );
+	
+	//Update site link color in real time...
+	wp.customize( 'link_textcolor', function( value ) {
+		value.bind( function( newval ) {
+			$('a').css('color', newval );
+		} );
+	} );
+	
 } )( jQuery );

@@ -202,7 +202,51 @@ function {%= prefix %}_font_url() {
 
 	return $font_url;
 }
-	
+
+function {%= prefix %}_customize_register( $wp_customize ) {
+   //All our sections, settings, and controls will be added here
+   	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+   	
+   	$wp_customize->add_setting( 'header_textcolor' , array(
+    	'default'     => '#000000',
+    	'transport'   => 'postMessage',
+	) );
+	$wp_customize->add_section( '{%= prefix %}_new_section_name' , array(
+    	'title'      => __( 'Visible Section Name', '{%= prefix %}' ),
+   		'priority'   => 30,
+	) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+		'label'        => __( 'Header Color', 'mytheme' ),
+		'section'    => 'your_section_id',
+		'settings'   => 'your_setting_id',
+	) ) );
+
+}
+add_action( 'customize_register', '{%= prefix %}_customize_register' );
+
+/**
+ * Used by hook: 'customize_preview_init'
+ * 
+ * @see add_action('customize_preview_init',$func)
+ */
+public static function {%= prefix %}_customizer_live_preview()
+{
+	wp_enqueue_script( 
+		  '{%= prefix %}-themecustomizer',			//Give the script an ID
+		  get_template_directory_uri().'/js/customizer.js',//Point to file
+		  array( 'jquery','customize-preview' ),	//Define dependencies
+		  '',						//Define a version (optional) 
+		  true						//Put script in footer?
+	);
+}
+add_action( 'customize_preview_init', '{%= prefix %}_customizer_live_preview' );
+
+
+
+
 function {%= prefix %}_scripts() {
 	// Add Amatic font, used in the main stylesheet.
 	wp_enqueue_style( 'string-theory-amatic', {%= prefix %}_font_url(), array(), null );
@@ -241,4 +285,6 @@ function is_child($parent) {
 		}
 		return $return;
 }
+
+require get_template_directory() . '/inc/kirki/kirki.php';
 ?>
