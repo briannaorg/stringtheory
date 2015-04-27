@@ -9,9 +9,10 @@ module.exports = function( grunt ) {
 		pkg:    grunt.file.readJSON( 'package.json' ),
 		jshint: {
 			all: [
-				'Gruntfile.js',
+				'!Gruntfile.js',
 				'js/**/*.js',
-				'!js/**/*.min.js'
+				'!js/**/*.min.js',
+				'!template.js'
 			],
 			options: {
 				curly:   true,
