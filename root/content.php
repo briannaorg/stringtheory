@@ -13,7 +13,7 @@
 							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 							  the_post_thumbnail('photostream-thumbnail', array('class' => 'alignleft')); 
 							} else {
-							  echo technosiren_get_post_image('thumbnail');
+							  echo {%= prefix %}_get_post_image('thumbnail');
 							}
 					 ?>
 			   		 </a>
